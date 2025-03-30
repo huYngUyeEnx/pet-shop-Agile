@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 
-@Table(name="ThuCung")
+@Table(name="SanPham")
 @Data
 @Getter
 @Setter

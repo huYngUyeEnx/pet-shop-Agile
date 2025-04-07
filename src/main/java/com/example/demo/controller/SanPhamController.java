@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import java.util.Optional;
+
 @Controller
 public class SanPhamController {
     @Autowired
@@ -25,6 +27,14 @@ public class SanPhamController {
         sanPhamRepo.deleteById(id);
         return "redirect:/san-pham/hien-thi";
     }
+
+    @GetMapping("/san-pham/detail/{id}")
+    public String detail(@PathVariable("id") Integer id,Model model){
+        model.addAttribute("sanPham",sanPhamRepo.findById(id).get());
+        model.addAttribute("listSanPham", sanPhamRepo.findAll());
+
+        return "view/DetailSP";
+    }
     @PostMapping("/san-pham/add")
     public String add(SanPham sanPham){
         sanPhamRepo.save(sanPham);
@@ -35,4 +45,6 @@ public class SanPhamController {
         sanPhamRepo.save(sanPham);
         return "redirect:/san-pham/hien-thi";
     }
+
+
 }

@@ -17,6 +17,7 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.format.annotation.DateTimeFormat;
 
 
 import java.util.Date;
@@ -46,7 +47,9 @@ public class DonHang {
 
     @Column(name="NgayDat")
     @Temporal(TemporalType.DATE)
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date ngayDat;
+
 
     @Column(name="TongTien")
     private double tongTien;

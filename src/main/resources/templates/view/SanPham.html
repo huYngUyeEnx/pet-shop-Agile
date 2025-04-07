@@ -286,45 +286,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <td>1</td>
-                    <td><a href="CTSP.html">Thức ăn cho chó</a> </td>
-                    <td>Thức ăn</td>
-                    <td class="price">50.000 VNĐ</td>
-                    <td>100</td>
-                    <td>
-                        <button class="btn btn-primary">Sửa</button>
-                        <button class="btn btn-danger">Xoa</button>
 
-                    </td>
-
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Lồng nuôi chim</td>
-                    <td>Phụ kiện</td>
-                    <td class="price">200.000 VNĐ</td>
-                    <td>50</td>
-                    <td>
-                        <button class="btn btn-primary">Sửa</button>
-                        <button class="btn btn-danger">Xoa</button>
-
-                    </td>
-
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>Vòng cổ cho mèo</td>
-                    <td>Phụ kiện</td>
-                    <td class="price">75.000 VNĐ</td>
-                    <td>80</td>
-                    <td>
-                        <button class="btn btn-primary">Sửa</button>
-                        <button class="btn btn-danger">Xoa</button>
-
-                    </td>
-
-                </tr>
                 <tr th:each="sanPham : ${listSanPham}">
                     <td th:text="${sanPham.maSanPham}"></td>
                     <td th:text="${sanPham.tenSanPham}"></td>
@@ -333,56 +295,54 @@
                     <td th:text="${sanPham.soLuongTon}"></td>
                     <td>
                         <button class="btn btn-primary">Sửa</button>
+
                         <a th:href="@{|/san-pham/delete/${sanPham.maSanPham}|}">
-                            <button class="btn btn-danger">Xoa</button></a>
-
-
+                            <button class="btn btn-danger">Xóa</button></a>
                     </td>
-
-
                 </tr>
                 </tbody>
+
             </table>
         </div>
     </div>
-<div>
-    <div class="card">
-        <div class="card-header">
-            <div class="card-title">Thêm/Sửa Sản Phẩm</div>
-        </div>
-        <div class="card-body">
-            <form action="/san-pham/add" method="post">
-                <div class="form-row">
+    <div>
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">Thêm/Sửa Sản Phẩm</div>
+            </div>
+            <div class="card-body">
+                <form action="/san-pham/add" method="post">
+                    <div class="form-row">
 
-                    <div class="form-group">
-                        <label for="tenSanPham">Tên Sản Phẩm</label>
-                        <input type="text" id="tenSanPham" name="tenSanPham" class="form-control" required>
-                    </div>
+                        <div class="form-group">
+                            <label for="tenSanPham">Tên Sản Phẩm</label>
+                            <input type="text" id="tenSanPham" name="tenSanPham" class="form-control" required>
+                        </div>
 
-                    <div class="form-group">
-                        <label for="danhMuc">Danh Mục</label>
-                        <input type="text" name="danhMuc" id="danhMuc" class="form-control" required>
+                        <div class="form-group">
+                            <label for="danhMuc">Danh Mục</label>
+                            <input type="text" name="danhMuc" id="danhMuc" class="form-control" required>
+                        </div>
                     </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="giaSanPham">Giá</label>
-                        <input type="number" name="giaSanPham" id="giaSanPham" class="form-control" required>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="giaSanPham">Giá</label>
+                            <input type="number" name="giaSanPham" id="giaSanPham" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="soLuongTon">Số Lượng Tồn</label>
+                            <input type="number" name="soLuongTon" id="soLuongTon" class="form-control" required>
+                        </div>
                     </div>
                     <div class="form-group">
-                        <label for="soLuongTon">Số Lượng Tồn</label>
-                        <input type="number" name="soLuongTon" id="soLuongTon" class="form-control" required>
+                        <label for="moTa">Mô Tả</label>
+                        <textarea id="moTa" name="moTa" class="form-control" rows="3" required></textarea>
                     </div>
-                </div>
-                <div class="form-group">
-                    <label for="moTa">Mô Tả</label>
-                    <textarea id="moTa" name="moTa" class="form-control" rows="3" required></textarea>
-                </div>
-                <button type="submit" class="btn btn-success">Lưu</button>
-            </form>
+                    <button type="submit" class="btn btn-success">Lưu</button>
+                </form>
+            </div>
         </div>
     </div>
-</div>
 </div>
 
 </body>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Chi Tiết Bác Sĩ</title>
+</head>
+<body>
+
+<h2>Chi Tiết Bác Sĩ</h2>
+
+<form th:action="@{|/san-pham/update/${sanPham.maSanPham}|}" th:object="${sanPham}" method="post">
+
+    <label>Tên San Pham:</label>
+    <input type="text" th:field="*{tenSanPham}" required> <br>
+    <br>
+    <label>Danh muc:</label>
+    <input type="text" th:field="*{danhMuc}" required> <br>
+    <br>
+    <label>Gia:</label>
+    <input type="number" th:field="*{gia}" required> <br>
+
+    <br>
+    <label>SoLuongTon:</label>
+    <input type="number" th:field="*{soLuongTon}" required> <br>
+
+    <br>
+    <label>Mo ta:</label>
+    <input type="text" th:field="*{moTa}" required> <br>
+    <br>
+    <button type="submit">Cập Nhật</button>
+</form>
+
+<br>
+<a href="/san-pham/hien-thi">Quay Lại</a>
+
+</body>
+</html>
